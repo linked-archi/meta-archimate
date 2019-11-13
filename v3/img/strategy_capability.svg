@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="130" height="60">
+
+    <rect rx='10.0' ry='10.0' width='130.0px' stroke-width='1.0' fill='rgb(245, 222, 170)' stroke='rgb(51, 51, 51)'
+          look='allInOne' height='60.0px'/>
+    <g transform='translate(109.0,4.0)'>
+        <svg xmlns="http://www.w3.org/2000/svg" height="16.0" version="1.1" viewBox="0 0 160 160" width="16.0">
+            <g>
+                <rect fill="#f5deaa" height="49.455" look="background" width="49.455" x="105.545" y="105.545"/>
+                <path d="M150,110.545V150h-39.455v-39.455H150 M160,100.545h-59.455V160H160V100.545L160,100.545z"
+                      fill="#333333" look="border" stroke="none"/>
+            </g>
+            <g>
+                <rect fill="#f5deaa" height="49.455" look="background" width="49.455" x="105.545" y="55.511"/>
+                <path d="M150,60.511v39.455h-39.455V60.511H150 M160,50.511h-59.455v59.455H160V50.511L160,50.511z"
+                      fill="#333333" look="border" stroke="none"/>
+            </g>
+            <g>
+                <rect fill="#f5deaa" height="49.455" look="background" width="49.455" x="55.034" y="105.545"/>
+                <path d="M99.489,110.545V150H60.034v-39.455H99.489 M109.489,100.545H50.034V160h59.455V100.545L109.489,100.545z"
+                      fill="#333333" look="border" stroke="none"/>
+            </g>
+            <g>
+                <rect fill="#f5deaa" height="49.455" look="background" width="49.455" x="55.034" y="55.511"/>
+                <path d="M99.489,60.511v39.455H60.034V60.511H99.489 M109.489,50.511H50.034v59.455h59.455V50.511L109.489,50.511z"
+                      fill="#333333" look="border" stroke="none"/>
+            </g>
+            <g>
+                <rect fill="#f5deaa" height="49.455" look="background" width="49.455" x="5" y="105.545"/>
+                <path d="M49.455,110.545V150H10v-39.455H49.455 M59.455,100.545H0V160h59.455V100.545L59.455,100.545z"
+                      fill="#333333" look="border" stroke="none"/>
+            </g>
+            <g>
+                <rect fill="#f5deaa" height="49.455" look="background" width="49.455" x="105.545" y="5.477"/>
+                <path d="M150,10.477v39.455h-39.455V10.477H150 M160,0.477h-59.455v59.455H160V0.477L160,0.477z"
+                      fill="#333333" look="border" stroke="none"/>
+            </g>
+        </svg>
+    </g>
+
+</svg>

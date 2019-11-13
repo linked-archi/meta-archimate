@@ -1,0 +1,16 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="130" height="60"
+     preserveAspectRatio="none">
+
+    <rect width='130.0px' stroke-width='1.0' fill='rgb(255, 255, 175)' stroke='rgb(51, 51, 51)' look='allInOne'
+          height='60.0px'/>
+    <g transform='translate(109.0,4.0)'>
+        <svg xmlns="http://www.w3.org/2000/svg" height="16.0" id="Layer_1" version="1.1" viewBox="0 0 160 160"
+             width="16.0">
+            <path d="M136.646,131.061c0,0-106.369,0-113.334,0  c-9.286,0-16.814-22.882-16.814-51.108s7.528-51.108,16.814-51.108c6.441,0,113.334,0,113.334,0"
+                  fill="#ffffaf" look="allInOne" stroke="#333333" stroke-miterlimit="10" stroke-width="10"/>
+            <ellipse cx="136.646" cy="79.953" fill="#ffffaf" look="allInOne" rx="16.814" ry="51.108" stroke="#333333"
+                     stroke-miterlimit="10" stroke-width="10"/>
+        </svg>
+    </g>
+
+</svg>

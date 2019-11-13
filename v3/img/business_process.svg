@@ -1,0 +1,15 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="130" height="60"
+     preserveAspectRatio="none">
+
+    <rect rx='10.0' ry='10.0' width='130.0px' stroke-width='1.0' fill='rgb(255, 255, 175)' stroke='rgb(51, 51, 51)'
+          look='allInOne' height='60.0px'/>
+    <g transform='translate(109.0,4.0)'>
+        <svg xmlns="http://www.w3.org/2000/svg" height="16.0" version="1.1" viewBox="0 0 160 160" width="16.0">
+            <polygon fill="#ffffaf" look="background"
+                     points="85,113.805 5,113.805 5,51.071 85,51.071 85,12.332 152.928,82.331 85,148.188  "/>
+            <path d="M90,24.664l55.856,57.559L90,136.376v-17.572v-10H80H10V56.072h70h10v-10V24.664 M80,0v46.072H0v72.733h80V160l80-77.562   L80,0L80,0z"
+                  fill="#333333" look="border" stroke="none"/>
+        </svg>
+    </g>
+
+</svg>

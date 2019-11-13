@@ -1,0 +1,338 @@
+@prefix owl:       <http://www.w3.org/2002/07/owl#> .
+@prefix adms:      <http://www.w3.org/ns/adms#> .
+@prefix dcterms:   <http://purl.org/dc/terms/> .
+@prefix dc:        <http://purl.org/dc/elements/1.1/> .
+@prefix xsd:       <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:      <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:      <http://www.w3.org/2004/02/skos/core#> .
+@prefix arch-tax:  <https://meta.linked.archi/core-tax#> .
+@prefix amate:     <https://meta.linked.archi/archimate3.1#> .
+@prefix amate-tax: <https://meta.linked.archi/archimate3.1-tax#> .
+
+#ref http://pubs.opengroup.org/architecture/archimate3-doc/chap03.html
+
+amate-tax:ArchimateConcept
+    a              skos:Concept ;
+    rdfs:label     "ArchimateConcept" ;
+    skos:prefLabel "Archimate Concept"@en ;
+    skos:broader   arch-tax:ArchComponent
+.
+
+amate-tax:ArchimateElement
+    a              skos:Concept ;
+    rdfs:label     "ArchimateElement" ;
+    skos:prefLabel "ArchimateElement"@en ;
+    skos:broader   amate-tax:ArchimateConcept
+.
+
+amate-tax:ArchimateRelationship
+    a              skos:Concept ;
+    rdfs:label     "ArchimateRelationship" ;
+    skos:prefLabel "ArchimateRelationship"@en ;
+    skos:broader   amate-tax:ArchimateConcept
+.
+
+amate-tax:StructuralRelationship
+    a              skos:Concept ;
+    rdfs:label     "ArchimateRelationship" ;
+    skos:prefLabel "ArchimateRelationship"@en ;
+    skos:broader   amate-tax:ArchimateRelationship ;
+    skos:narrower  amate:Realization ;
+    skos:narrower  amate:Assignment ;
+    skos:narrower  amate:Aggregation ;
+    skos:narrower  amate:Composition ;
+.
+
+amate-tax:DependencyRelationship
+    a              skos:Concept ;
+    rdfs:label     "ArchimateRelationship" ;
+    skos:prefLabel "ArchimateRelationship"@en ;
+    skos:broader   amate-tax:ArchimateRelationship ;
+    skos:narrower  amate:Influence ;
+    skos:narrower  amate:Access ;
+    skos:narrower  amate:Serving ;
+.
+
+amate-tax:DynamicRelationship
+    a              skos:Concept ;
+    rdfs:label     "ArchimateRelationship" ;
+    skos:prefLabel "ArchimateRelationship"@en ;
+    skos:broader   amate-tax:ArchimateRelationship ;
+    skos:narrower  amate:Triggering ;
+    skos:narrower  amate:Flow ;
+.
+
+amate-tax:OtherRelationship
+    a              skos:Concept ;
+    rdfs:label     "ArchimateRelationship" ;
+    skos:prefLabel "ArchimateRelationship"@en ;
+    skos:broader   amate-tax:ArchimateRelationship ;
+    skos:narrower  amate:Specialization ;
+    skos:narrower  amate:Association ;
+.
+
+amate-tax:ArchimateRelationshipConnector
+    a              skos:Concept ;
+    rdfs:label     "ArchimateRelationshipConnector" ;
+    skos:prefLabel "ArchimateRelationshipConnector"@en ;
+    skos:broader   amate-tax:ArchimateConcept ;
+    skos:narrower  amate:Junction_And ;
+    skos:narrower  amate:Junction_Or ;
+.
+
+amate-tax:ArchimateElementByLayer
+    a              skos:Concept ;
+    rdfs:label     "ArchimateElementByLayer" ;
+    skos:prefLabel "ArchimateElementByLayer"@en ;
+    skos:broader   amate-tax:ArchimateElement
+.
+
+amate-tax:ArchimateElementByAspect
+    a              skos:Concept ;
+    rdfs:label     "ArchimateElementByLayer" ;
+    skos:prefLabel "ArchimateElementByLayer"@en ;
+    skos:broader   amate-tax:ArchimateElement
+.
+
+amate-tax:StrategyLayer
+    a              skos:Concept ;
+    rdfs:label     "BusinessLayer" ;
+    skos:prefLabel "BusinessLayer"@en ;
+    skos:broader   amate-tax:ArchimateElementByLayer ;
+    skos:narrower  amate:Resource ;
+    skos:narrower  amate:Capability ;
+    skos:narrower  amate:ValueStream ;
+    skos:narrower  amate:CourseOfAction ;
+.
+
+amate-tax:BusinessLayer
+    a              skos:Concept ;
+    rdfs:label     "BusinessLayer" ;
+    skos:prefLabel "BusinessLayer"@en ;
+    skos:broader   amate-tax:ArchimateElementByLayer ;
+    skos:narrower  amate:BusinessActor ;
+    skos:narrower  amate:BusinessRole ;
+    skos:narrower  amate:BusinessCollaboration ;
+    skos:narrower  amate:BusinessInterface ;
+    skos:narrower  amate:BusinessProcess ;
+    skos:narrower  amate:BusinessFunction ;
+    skos:narrower  amate:BusinessInteraction ;
+    skos:narrower  amate:BusinessEvent ;
+    skos:narrower  amate:BusinessService ;
+    skos:narrower  amate:BusinessObject ;
+    skos:narrower  amate:Contract ;
+    skos:narrower  amate:Representation ;
+    skos:narrower  amate:Product ;
+.
+
+amate-tax:ApplicationLayer
+    a              skos:Concept ;
+    rdfs:label     "ApplicationLayer" ;
+    skos:prefLabel "ApplicationLayer"@en ;
+    skos:broader   amate-tax:ArchimateElementByLayer ;
+    skos:narrower  amate:ApplicationComponent ;
+    skos:narrower  amate:ApplicationCollaboration ;
+    skos:narrower  amate:ApplicationInterface ;
+    skos:narrower  amate:ApplicationFunction ;
+    skos:narrower  amate:ApplicationInteraction ;
+    skos:narrower  amate:ApplicationProcess ;
+    skos:narrower  amate:ApplicationEvent ;
+    skos:narrower  amate:ApplicationService ;
+    skos:narrower  amate:DataObject ;
+.
+
+amate-tax:TechnologyLayer
+    a              skos:Concept ;
+    rdfs:label     "TechnologyLayer" ;
+    skos:prefLabel "TechnologyLayer"@en ;
+    skos:broader   amate-tax:ArchimateElementByLayer ;
+    skos:narrower  amate:Node ;
+    skos:narrower  amate:Device ;
+    skos:narrower  amate:SystemSoftware ;
+    skos:narrower  amate:TechnologyCollaboration ;
+    skos:narrower  amate:TechnologyInterface ;
+    skos:narrower  amate:Path ;
+    skos:narrower  amate:CommunicationNetwork ;
+    skos:narrower  amate:TechnologyFunction ;
+    skos:narrower  amate:TechnologyProcess ;
+    skos:narrower  amate:TechnologyInteraction ;
+    skos:narrower  amate:TechnologyEvent ;
+    skos:narrower  amate:TechnologyService ;
+    skos:narrower  amate:Artifact ;
+.
+
+
+amate-tax:PhysicalLayer
+    a              skos:Concept ;
+    rdfs:label     "PhysicalLayer" ;
+    skos:prefLabel "PhysicalLayer"@en ;
+    skos:broader   amate-tax:ArchimateElementByLayer ;
+    skos:narrower  amate:Equipment ;
+    skos:narrower  amate:Facility ;
+    skos:narrower  amate:DistributionNetwork ;
+    skos:narrower  amate:Material ;
+.
+
+amate-tax:ImplementationAndMigrationLayer
+    a              skos:Concept ;
+    rdfs:label     "ImplementationAndMigrationLayer" ;
+    skos:prefLabel "ImplementationAndMigrationLayer"@en ;
+    skos:broader   amate-tax:ArchimateElementByLayer ;
+    skos:narrower  amate:WorkPackage ;
+    skos:narrower  amate:Deliverable ;
+    skos:narrower  amate:ImplementationEvent ;
+    skos:narrower  amate:Plateau ;
+    skos:narrower  amate:Gap ;
+.
+
+# Motivation
+
+amate-tax:MotivationElement
+    a              skos:Concept ;
+    rdfs:label     "MotivationElement" ;
+    skos:prefLabel "MotivationElement"@en ;
+    skos:broader   amate-tax:ArchimateElementByAspect ;
+    skos:narrower  amate:Stakeholder ;
+    skos:narrower  amate:Driver ;
+    skos:narrower  amate:Assessment ;
+    skos:narrower  amate:Goal ;
+    skos:narrower  amate:Outcome ;
+    skos:narrower  amate:Principle ;
+    skos:narrower  amate:Requirement ;
+    skos:narrower  amate:Constraint ;
+    skos:narrower  amate:Meaning ;
+    skos:narrower  amate:Value ;
+.
+
+# Aspects
+
+amate-tax:StructureElement
+    a              skos:Concept ;
+    rdfs:label     "ActiveStructureElement" ;
+    skos:prefLabel "ActiveStructureElement"@en ;
+    rdfs:comment
+                   "represents the structural elements (the business actors, application components, and devices that display actual behavior; i.e., the 'subjects' of activity)" ;
+    skos:broader   amate-tax:ArchimateElementByAspect ;
+    skos:narrower  amate:Resource ;
+.
+
+amate-tax:ActiveStructureElement
+    a              skos:Concept ;
+    rdfs:label     "ActiveStructureElement" ;
+    skos:prefLabel "ActiveStructureElement"@en ;
+    rdfs:comment
+                   "represents the structural elements (the business actors, application components, and devices that display actual behavior; i.e., the 'subjects' of activity)" ;
+    skos:broader   amate-tax:StructureElement ;
+    skos:narrower  amate:Stakeholder ;
+    skos:narrower  amate:Path ;
+    skos:narrower  amate:Location ;
+    skos:narrower  amate:CommunicationNetwork ;
+    skos:narrower  amate:Node ;
+    skos:narrower  amate:SystemSoftware ;
+    skos:narrower  amate:Device ;
+    skos:narrower  amate:Equipment ;
+    skos:narrower  amate:Facility ;
+    skos:narrower  amate:DistributionNetwork ;
+.
+
+amate-tax:ExternalActiveStructureElement
+    a              skos:Concept ;
+    rdfs:label     "ExternalActiveStructureElement" ;
+    skos:prefLabel "ExternalActiveStructureElement"@en ;
+    rdfs:comment   "also called interfaces" ;
+    skos:broader   amate-tax:ActiveStructureElement ;
+    skos:narrower  amate:BusinessInterface ;
+    skos:narrower  amate:ApplicationInterface ;
+    skos:narrower  amate:InfrastructureInterface ;
+.
+
+amate-tax:InternalActiveStructureElement
+    a              skos:Concept ;
+    rdfs:label     "InternalActiveStructureElement" ;
+    skos:prefLabel "InternalActiveStructureElement"@en ;
+    rdfs:comment   "" ;
+    skos:broader   amate-tax:ActiveStructureElement ;
+    skos:narrower  amate:BusinessRole ;
+    skos:narrower  amate:BusinessActor ;
+    skos:narrower  amate:BusinessCollaboration ;
+    skos:narrower  amate:ApplicationComponent ;
+    skos:narrower  amate:ApplicationCollaboration ;
+.
+
+
+amate-tax:PassiveStructureElement
+    a              skos:Concept ;
+    rdfs:label     "PassiveStructureElement" ;
+    skos:prefLabel "PassiveStructureElement"@en ;
+    rdfs:comment
+                   "represents the objects on which behavior is performed. These are usually information objects in the Business Layer and data objects in the Application Layer, but they may also be used to represent physical objects" ;
+    skos:broader   amate-tax:StructureElement ;
+    skos:narrower  amate:BusinessObject ;
+    skos:narrower  amate:Contract ;
+    skos:narrower  amate:Representation ;
+    skos:narrower  amate:DataObject ;
+    skos:narrower  amate:Meaning ;
+    skos:narrower  amate:TechnologyObject ;
+    skos:narrower  amate:Artifact ;
+    skos:narrower  amate:Value ;
+    skos:narrower  amate:Material ;
+.
+
+amate-tax:BehaviorElement
+    a              skos:Concept ;
+    rdfs:label     "BehaviorElement" ;
+    skos:prefLabel "BehaviorElement"@en ;
+    rdfs:comment
+                   "represents the behavior (processes, functions, events, and services) performed by the actors. Structural elements are assigned to behavioral elements, to show who or what displays the behavior" ;
+    skos:broader   amate-tax:ArchimateElementByAspect ;
+    skos:narrower  amate:Capability ;
+    skos:narrower  amate:ValueStream ;
+    skos:narrower  amate:CourseOfAction ;
+.
+
+amate-tax:ExternalBehaviorElement
+    a              skos:Concept ;
+    rdfs:label     "ExternalBehaviorElement" ;
+    skos:prefLabel "BehaviorElement"@en ;
+    rdfs:comment   "also called services" ;
+    skos:broader   amate-tax:BehaviorElement ;
+    skos:narrower  amate:BusinessService ;
+    skos:narrower  amate:ApplicationService ;
+    skos:narrower  amate:InfrastructureService ;
+.
+
+amate-tax:InternalBehaviorElement
+    a              skos:Concept ;
+    rdfs:label     "InternalBehaviorElement" ;
+    skos:prefLabel "InternalBehaviorElement"@en ;
+    skos:broader   amate-tax:BehaviorElement ;
+    skos:narrower  amate:BusinessFunction ;
+    skos:narrower  amate:BusinessInteraction ;
+    skos:narrower  amate:BusinessProcess ;
+    skos:narrower  amate:ApplicationFunction ;
+    skos:narrower  amate:ApplicationInteraction ;
+    skos:narrower  amate:ApplicationProcess ;
+    skos:narrower  amate:InfrastructureFunction ;
+.
+
+amate-tax:Event
+    a              skos:Concept ;
+    rdfs:label     "Event - BehaviorElement" ;
+    skos:prefLabel "Event - BehaviorElement"@en ;
+    skos:broader   amate-tax:BehaviorElement ;
+    skos:narrower  amate:BusinessEvent ;
+    skos:narrower  amate:ApplicationEvent ;
+    skos:narrower  amate:TechnologyEvent ;
+.
+
+amate-tax:CompositeElement
+    a              skos:Concept ;
+    rdfs:label     "MotivationElement" ;
+    skos:prefLabel "MotivationElement"@en ;
+    rdfs:comment
+                   "A composite element is an element that does not necessarily fit in a single aspect (column) of the framework, but may combine two or more aspects." ;
+    skos:broader   amate-tax:ArchimateElementByAspect ;
+    skos:narrower  amate:Product ;
+    skos:narrower  amate:Grouping ;
+    skos:narrower  amate:Location ;
+.
