@@ -18,18 +18,18 @@
     cc:license
                         "This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 Unported License."@en ;
     dc:creator          "Kalin Maldzhanski"^^xsd:string ;
-    dc:description      "Linked.Archi ArchiMate 3.0 Ontology."@en ;
+    dc:description      "Linked.Archi ArchiMate 3.1 Ontology."@en ;
     dc:issued           "2019-03-17"^^xsd:date ;
-    dc:modified         "2019-10-17"^^xsd:date ;
+    dc:modified         "2019-11-17"^^xsd:date ;
     dc:publisher        <https://linked.archi> ;
     dc:publisher        "Linked.Archi"@en ;
     dcterms:source      <https://pubs.opengroup.org/architecture/archimate3-doc> ;
-    dcterms:source      <http://www.opengroup.org/xsd/archimate/3.0/archimate3_Model.xsd> ;
+    dcterms:source      <http://www.opengroup.org/xsd/archimate/3.1/archimate3_Model.xsd> ;
     prov:wasDerivedFrom <https://pubs.opengroup.org/architecture/archimate3-doc> ;
     dc:title            "Linked.Archi ArchiMate Ontology"@en ;
-    rdfs:comment        "Version 3.0.1: Initial"@en ;
+    rdfs:comment        "Version 3.1"@en ;
     owl:imports         <https://meta.linked.archi/core.ttl> ;
-    owl:versionInfo     3.0 ;
+    owl:versionInfo     3.1 ;
 .
 
 amate:ArchimateElement
@@ -42,10 +42,10 @@ amate:ArchimateElement
                     "Basic unit in the ArchiMate metamodel. Used to define and describe the constituent parts of Enterprise Architectures and their unique set of characteristics."@en ;
 .
 
-amate:ArchimateRelType
+amate:ArchimateRelationship
     a               owl:Class ;
-    rdfs:subClassOf arch:relType ;
-    rdfs:label      "ArchimateRelType" ;
+    rdfs:subClassOf arch:Relationship ;
+    rdfs:label      "ArchimateRelationship" ;
     arch:specURL    "https://pubs.opengroup.org/architecture/archimate3-doc/chap02.html#_Toc489945965" ;
     rdfs:seeAlso    "https://pubs.opengroup.org/architecture/archimate3-doc/chap05.html" ;
     skos:definition
@@ -840,13 +840,13 @@ Note: In previous versions of this standard, this element was called ‘infrastr
 .
 
 amate:TechnologyObject
-    a                    owl:Class ;
-    rdfs:subClassOf      amate:ArchimateElement ;
-    rdfs:label           "TechnologyObject"@en ;
-    arch:specURL         "https://pubs.opengroup.org/architecture/archimate3-doc/chap10.html#_Toc489946100" ;
+    a               owl:Class ;
+    rdfs:subClassOf amate:ArchimateElement ;
+    rdfs:label      "TechnologyObject"@en ;
+    arch:specURL    "https://pubs.opengroup.org/architecture/archimate3-doc/chap10.html#_Toc489946100" ;
     skos:definition
-                         "A technology object represents a passive element that is used or produced by technology behavior."@en ;
-    skos:scopeNote       """
+                    "A technology object represents a passive element that is used or produced by technology behavior."@en ;
+    skos:scopeNote  """
 Technology objects represent the “physical” objects manipulated by the infrastructure of an enterprise. Technology objects are abstract elements; i.e., they are not instantiated in models but serve as the generic type of the things manipulated by the Technology Layer. This may include both artifacts (e.g., files) and physical material.
 
 Technology objects may be accessed by technology behavior (functions, processes, interactions, events, and services). A technology object may have association, specialization, aggregation, or composition relationships with other technology objects. A technology object may realize a data object or business object. It may be realized by an artifact or material (from the physical elements). The name of a technology object should preferably be a noun.
@@ -1049,160 +1049,87 @@ The location element is used to model the places where (active and passive) stru
 
 
 
-# Element Classes
+# <--- Element Classes
 
 # Archimate Relationships
 
-
-amate:accessType
-    a           owl:DatatypeProperty ;
-    rdfs:label  "accessType"@en ;
-    rdfs:domain [ rdf:type       owl:Restriction ;
-                  owl:onProperty rdf:predicate ;
-                  owl:hasValue   amate:access ] ;
-    rdfs:range  [ rdf:type  rdfs:Datatype ;
-                  owl:oneOf [ rdf:type  rdf:List ;
-                              rdf:first "Access" ;
-                              rdf:rest  [ rdf:type  rdf:List ;
-                                          rdf:first "Read" ;
-                                          rdf:rest  [ rdf:type  rdf:List ;
-                                                      rdf:first "Write" ;
-                                                      rdf:rest  [ rdf:type  rdf:List ;
-                                                                  rdf:first "ReadWrite" ;
-                                                                  rdf:rest  rdf:nil ] ] ] ] ]
-.
-
-
-
-
-#TODO this can be a string
-
-amate:influenceStrength
-    a           owl:DatatypeProperty ;
-    rdfs:label  "influenceStrength"@en ;
-    rdfs:domain [ a              owl:Restriction ;
-                  owl:onProperty rdf:predicate ;
-                  owl:hasValue   amate:influence ] ;
-    rdfs:range  amate:InfluenceModifierType
-.
-
-amate:InfluenceModifierType
-    a         rdfs:Datatype ;
-    owl:oneOf [ rdf:type  rdf:List ;
-                rdf:first "1" ;
-                rdf:rest  [ rdf:type  rdf:List ;
-                            rdf:first "2" ;
-                            rdf:rest  [ rdf:type  rdf:List ;
-                                        rdf:first "3" ;
-                                        rdf:rest  [ rdf:type  rdf:List ;
-                                                    rdf:first "4" ;
-                                                    rdf:rest  [ rdf:type  rdf:List ;
-                                                                rdf:first "5" ;
-                                                                rdf:rest  [ rdf:type  rdf:List ;
-                                                                            rdf:first "6" ;
-                                                                            rdf:rest  [ rdf:type  rdf:List ;
-                                                                                        rdf:first "7" ;
-                                                                                        rdf:rest  [ rdf:type  rdf:List ;
-                                                                                                    rdf:first "2" ;
-                                                                                                    rdf:rest  [ rdf:type
-        rdf:List ;
-                                                                                                                rdf:first
-        "8" ;
-                                                                                                                rdf:rest
-        [ rdf:type  rdf:List ;
-          rdf:first "9" ;
-          rdf:rest  [ rdf:type  rdf:List ;
-                      rdf:first "10" ;
-                      rdf:rest  [ rdf:type  rdf:List ;
-                                  rdf:first "0" ;
-                                  rdf:rest  [ rdf:type  rdf:List ;
-                                              rdf:first "+" ;
-                                              rdf:rest  [ rdf:type  rdf:List ;
-                                                          rdf:first "++" ;
-                                                          rdf:rest  [ rdf:type  rdf:List ;
-                                                                      rdf:first "-" ;
-                                                                      rdf:rest  [ rdf:type  rdf:List ;
-                                                                                  rdf:first "--" ;
-                                                                                  rdf:rest
-                                                                                            rdf:nil ] ] ] ] ] ] ] ] ] ] ] ] ] ] ] ]
-.
-
-# Types of Relationships
-
-
-amate:composition
-    a                    owl:ObjectProperty, amate:ArchimateRelType ;
-    rdfs:label           "composition"@en ;
-    arch:prefVisNotation "https://meta.linked.archi/archimate/v3/img/rel_composition.svg" ;
-.
-
-amate:aggregation
-    a                    owl:ObjectProperty, amate:ArchimateRelType ;
-    rdfs:label           "aggregation"@en ;
-    arch:prefVisNotation "https://meta.linked.archi/archimate/v3/img/rel_aggregation.svg" ;
-.
-
-amate:assignment
-    a                    owl:ObjectProperty, amate:ArchimateRelType ;
-    rdfs:label           "assignment"@en ;
-    arch:prefVisNotation "https://meta.linked.archi/archimate/v3/img/rel_assignment.svg" ;
-.
-
-amate:realization
-    a                    owl:ObjectProperty, amate:ArchimateRelType ;
-    rdfs:label           "realization"@en ;
-    arch:prefVisNotation "https://meta.linked.archi/archimate/v3/img/rel_realization.svg" ;
-.
-
-amate:serving
-    a                    owl:ObjectProperty, amate:ArchimateRelType ;
-    rdfs:label           "serving"@en ;
-    arch:prefVisNotation "https://meta.linked.archi/archimate/v3/img/rel_serving.svg" ;
-.
-
-amate:access
-    a                    owl:ObjectProperty, amate:ArchimateRelType ;
+amate:Access
+    a                    amate:ArchimateRelationship ;
     rdfs:label           "access"@en ;
     arch:prefVisNotation "https://meta.linked.archi/archimate/v3/img/rel_access.svg" ;
 .
 
-amate:influence
-    a                    owl:ObjectProperty, amate:ArchimateRelType ;
-    rdfs:label           "influence"@en ;
+amate:accessType
+    a           owl:DatatypeProperty ;
+    rdfs:label  "accessType"@en ;
+    rdfs:domain amate:Access ;
+    rdfs:range  <http://www.opengroup.org/xsd/archimate/3.0/archimate3_Model.xsd#xscd(/type::AccessTypeEnum)> ;
+.
+
+
+amate:influenceStrength
+    a           owl:DatatypeProperty ;
+    rdfs:label  "influenceStrength"@en ;
+    rdfs:domain amate:Influence ;
+    rdfs:range  <http://www.opengroup.org/xsd/archimate/3.0/archimate3_Model.xsd#xscd(/type::InfluenceModifierType)> ;
+.
+
+amate:Composition
+    a                    amate:ArchimateRelationship ;
+    rdfs:label           "Composition"@en ;
+    arch:prefVisNotation "https://meta.linked.archi/archimate/v3/img/rel_composition.svg" ;
+.
+
+amate:Aggregation
+    a                    amate:ArchimateRelationship ;
+    rdfs:label           "Aggregation"@en ;
+    arch:prefVisNotation "https://meta.linked.archi/archimate/v3/img/rel_aggregation.svg" ;
+.
+
+amate:Assignment
+    a                    amate:ArchimateRelationship ;
+    rdfs:label           "Assignment"@en ;
+    arch:prefVisNotation "https://meta.linked.archi/archimate/v3/img/rel_assignment.svg" ;
+.
+
+amate:Realization
+    a                    amate:ArchimateRelationship ;
+    rdfs:label           "Realization"@en ;
+    arch:prefVisNotation "https://meta.linked.archi/archimate/v3/img/rel_realization.svg" ;
+.
+
+amate:Serving
+    a                    amate:ArchimateRelationship ;
+    rdfs:label           "Serving"@en ;
+    arch:prefVisNotation "https://meta.linked.archi/archimate/v3/img/rel_serving.svg" ;
+.
+amate:Influence
+    a                    amate:ArchimateRelationship ;
+    rdfs:label           "Influence"@en ;
     arch:prefVisNotation "https://meta.linked.archi/archimate/v3/img/rel_influence.svg" ;
 .
 
-amate:triggering
-    a                    owl:ObjectProperty, amate:ArchimateRelType ;
-    rdfs:label           "triggering"@en ;
+amate:Triggering
+    a                    amate:ArchimateRelationship ;
+    rdfs:label           "Triggering"@en ;
     arch:prefVisNotation "https://meta.linked.archi/archimate/v3/img/rel_triggering.svg" ;
 .
 
-amate:flow
-    a                    owl:ObjectProperty, amate:ArchimateRelType ;
-    rdfs:label           "flow"@en ;
+amate:Flow
+    a                    amate:ArchimateRelationship ;
+    rdfs:label           "Flow"@en ;
     arch:prefVisNotation "https://meta.linked.archi/archimate/v3/img/rel_flow.svg" ;
 .
 
-amate:specialization
-    a                    owl:ObjectProperty, amate:ArchimateRelType ;
-    rdfs:label           "specialization"@en ;
+amate:Specialization
+    a                    amate:ArchimateRelationship ;
+    rdfs:label           "Specialization"@en ;
     arch:prefVisNotation "https://meta.linked.archi/archimate/v3/img/rel_specialization.svg" ;
 .
 
-amate:association
-    a                    owl:ObjectProperty, amate:ArchimateRelType ;
-    rdfs:label           "association"@en ;
+amate:Association
+    a                    amate:ArchimateRelationship ;
+    rdfs:label           "Association"@en ;
     arch:prefVisNotation "https://meta.linked.archi/archimate/v3/img/rel_association.svg" ;
 .
-
-
-# There are 2 ways to export properties from archimate
-# 1) use arch:Property class with arch:customProperty
-# 2) extend the ontology and create custom owl:DatatypeProperty or owl:ObjectProperty
-#
-# Creating properties in Archimate does not nescesary mean that one wants to amend the ontology, while in some cases
-# this would be the expected behaviour
-#
-
 

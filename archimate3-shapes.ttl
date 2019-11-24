@@ -1,0 +1,36 @@
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix cc:      <http://creativecommons.org/ns#> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix prov:    <http://www.w3.org/ns/prov#> .
+@prefix sh:      <http://www.w3.org/ns/shacl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix arch:    <https://meta.linked.archi/core#> .
+@prefix amate:   <https://meta.linked.archi/archimate3#> .
+@prefix amsh:    <https://meta.linked.archi/archimate3-shapes#> .
+
+<https://meta.linked.archi/archimate3-shapes>
+    rdf:type            owl:Ontology ;
+    owl:imports         <https://meta.linked.archi/archimate3#> ;
+    cc:license          <http://creativecommons.org/licenses/by-sa/3.0/> ;
+    cc:license
+                        "This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 Unported License."@en ;
+    dc:creator          "Kalin Maldzhanski"^^xsd:string ;
+    dc:description      "Linked.Archi ArchiMate 3.0 Ontology."@en ;
+    dc:issued           "2019-03-17"^^xsd:date ;
+    dc:modified         "2019-10-17"^^xsd:date ;
+    dc:publisher        <https://linked.archi> ;
+    dc:publisher        "Linked.Archi"@en ;
+    dcterms:source      <https://pubs.opengroup.org/architecture/archimate3-doc> ;
+    dcterms:source      <http://www.opengroup.org/xsd/archimate/3.0/archimate3_Model.xsd> ;
+    prov:wasDerivedFrom <https://pubs.opengroup.org/architecture/archimate3-doc> ;
+    dc:title            "Linked.Archi ArchiMate Ontology"@en ;
+    rdfs:comment        "Version 3.0.1: Initial"@en ;
+    owl:imports         <https://meta.linked.archi/core.ttl> ;
+    owl:versionInfo     3.0 ;
+.
+
+
