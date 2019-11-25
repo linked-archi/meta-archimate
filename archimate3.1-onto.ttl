@@ -252,7 +252,7 @@ Capabilities are often used for capability-based planning, to describe their evo
 amate:ValueStream
     a                    owl:Class ;
     rdfs:subClassOf      amate:ArchimateElement ;
-    rdfs:label           "Capability"@en ;
+    rdfs:label           "ValueStream"@en ;
     arch:specURL         "https://pubs.opengroup.org/architecture/archimate3-doc/chap07.html#_Toc10045360" ;
     skos:definition
                          "A value stream represents a sequence of activities that create an overall result for a customer, stakeholder, or end user."@en ;
@@ -267,7 +267,7 @@ Value streams are typically realized by business processes and possibly other co
 It is recommended that the name of a value stream be expressed using a verb-noun construct in the active tense; e.g., “Acquire Insurance Product”.
          """@en ;
 
-    arch:prefVisNotation "https://meta.linked.archi/archimate/v3/img/strategy_capability.svg" ;
+    arch:prefVisNotation "https://meta.linked.archi/archimate/v3/img/strategy_value_stream.svg" ;
 .
 
 amate:CourseOfAction
@@ -1067,12 +1067,20 @@ amate:accessType
 .
 
 
-amate:influenceStrength
+amate:modifier
     a           owl:DatatypeProperty ;
-    rdfs:label  "influenceStrength"@en ;
+    rdfs:label  "modifier"@en ;
     rdfs:domain amate:Influence ;
     rdfs:range  <http://www.opengroup.org/xsd/archimate/3.0/archimate3_Model.xsd#xscd(/type::InfluenceModifierType)> ;
 .
+
+amate:isDirected
+    a           owl:DatatypeProperty ;
+    rdfs:label  "isDirected"@en ;
+    rdfs:domain amate:Association ;
+    rdfs:range xsd:boolean ;
+.
+
 
 amate:Composition
     a                    amate:ArchimateRelationship ;
